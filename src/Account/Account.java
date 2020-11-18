@@ -7,12 +7,21 @@ public class Account {
     private int id = 0;
     private double balance = 0;
     private double interest = 0;
+    private double loan_amount = 0;
     private Date created(){
     Date now = new Date();
         return now;
     }
     public Account(){
     }
+
+    public Account(int id, double balance, double interest, double loan_amount) {
+        this.id = id;
+        this.balance = balance;
+        this.interest = interest;
+        this.loan_amount = loan_amount;
+    }
+
     public Account(int id, double balance, double interest) {
         this.id = id;
         this.balance = balance;
@@ -31,12 +40,15 @@ public class Account {
         double amount = 2500;
         balance = balance - amount;
         return balance;
+
     }
     public double deposit(double balance){
         double amount = 3000;
         balance = amount + balance;
         return balance;
     }
+
+
 
     public int getId() {
         return id;
