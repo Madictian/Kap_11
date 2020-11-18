@@ -8,7 +8,6 @@ public class Transactions {
     private Double amount, balance;
     private String description;
     private char type;
-    private ArrayList<New_account> list = new ArrayList<>();
 
     public Date getDate() {
         return date;
@@ -50,8 +49,8 @@ public class Transactions {
         this.type = type;
     }
 
-    public Transactions(Date date, Double amount, Double balance, String description, char type) {
-        this.date = date;
+    public Transactions( Double amount, Double balance, String description, char type) {
+        date = new java.util.Date();
         this.amount = amount;
         this.balance = balance;
         this.description = description;

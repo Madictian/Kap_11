@@ -5,14 +5,12 @@ public class Account_Checking extends Account{
         super(id, balance, interest);
     }
 
-    public double withdraw(double balance){
-        double amount = 2500;
-        if (amount > balance + 300){
+    public void withdraw(double amount){
+
+        if (amount > this.getBalance() + 300){
             System.out.println("insufficient balance.");
-            return balance;
         } else {
-            balance = balance - amount;
-            return balance;
+            this.setBalance(this.getBalance() - amount);
         }
     }
 }

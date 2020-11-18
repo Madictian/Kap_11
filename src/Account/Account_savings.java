@@ -5,15 +5,12 @@ public class Account_savings extends Account {
         super(id, balance, interest);
     }
 
-    public double withdraw(double balance){
-        double amount = 2500;
+    @Override
+    public void withdraw(double amount){
 
-        if (amount > balance){
+        if (amount > this.getBalance()){
             System.out.println("insufficient balance.");
-            return balance;
-        } else {
-            balance = balance - amount;
-            return balance;
-        }
+
+        } else this.setBalance(this.getBalance() - amount);
     }
 }
